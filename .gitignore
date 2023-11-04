@@ -168,13 +168,13 @@ app/data/photo/*
 app/data/scripts/*
 app/data/storage/*
 app/data/voices/*
-app/data/handlers/custom_handlers/*
+app/handlers/custom_handlers/*
 
 app/data/photo/
 app/data/scripts/
 app/data/storage/
 app/data/voices/
-app/data/handlers/custom_handlers
+app/handlers/custom_handlers
 
 cookies
 app/data/cookies
