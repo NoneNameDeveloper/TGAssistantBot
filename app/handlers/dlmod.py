@@ -47,7 +47,7 @@ async def dlmod(_, message: types.Message):
         await message.download(file_name=file_path)
 
     else:
-        return
+        return await message.edit("Please, provide a module. Write .help for FAQ.")
 
     await message.edit("Downloaded...")
 
