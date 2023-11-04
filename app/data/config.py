@@ -15,8 +15,6 @@ class Config:
     REDIS_HOST = os.getenv("REDIS_HOST")
     REDIS_PORT = os.getenv("REDIS_PORT")
 
-    ADMIN_ID = os.getenv("OWN_ID")
-
     VOICE_STORAGE = "app/data/storage/"
     PHOTO_STORAGE = "app/data/photo/"
 

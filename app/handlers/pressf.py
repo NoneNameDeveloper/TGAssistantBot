@@ -2,12 +2,10 @@ from pyrogram import types, Client
 
 from pyrogram import filters
 
-from app.filters import is_admin
-
 from loader import client
 
 
-@Client.on_message(is_admin & filters.text & filters.regex("^\.pressf"))
+@Client.on_message(filters.me & filters.text & filters.regex("^\.pressf"))
 async def pressf(client: Client, message: types.Message):
     """print sentence letter by letter"""
     paytext = message.text[8:]

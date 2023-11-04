@@ -2,8 +2,6 @@ from pyrogram import types, Client
 
 from pyrogram import filters
 
-from app.filters import is_admin
-
 import urllib.parse
 
 from loader import client
@@ -11,7 +9,7 @@ from loader import client
 g_link = "https://www.google.com/search?q="
 
 
-@Client.on_message(is_admin & filters.text & filters.regex("^\.g"))
+@Client.on_message(filters.me & filters.text & filters.regex("^\.g"))
 async def google(client: Client, message: types.Message):
     """print sentence letter by letter"""
     text_splitted = message.text[3:]

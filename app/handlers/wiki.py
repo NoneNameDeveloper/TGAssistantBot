@@ -4,14 +4,12 @@ import wikipedia
 
 from pyrogram import filters
 
-from app.filters import is_admin
-
 import logging
 
 from loader import client
 
 
-@Client.on_message(is_admin & filters.text & filters.regex("^\.wiki"))
+@Client.on_message(filters.me & filters.text & filters.regex("^\.wiki"))
 async def wiki(_, message: types.Message):
     splitted_text = message.text[6:]
 

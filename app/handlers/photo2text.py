@@ -10,14 +10,12 @@ from pyrogram import filters
 from app.data import Config
 from app.engine.utils import get_timestamp
 
-from app.filters import is_admin
-
 import html
 
 from loader import client
 
 
-@Client.on_message(is_admin & filters.text & filters.regex("^\.pt$") &
+@Client.on_message(filters.me & filters.text & filters.regex("^\.pt$") &
                    filters.reply)
 async def voice2text(client: Client, message: types.Message):
     """extract text from photo"""

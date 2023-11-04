@@ -174,7 +174,8 @@ app/data/photo/
 app/data/scripts/
 app/data/storage/
 app/data/voices/
-app/handlers/custom_handlers
+app/handlers/custom_handlers/
 
 cookies
 app/data/cookies
+/app/handlers/custom_handlers/

@@ -219,12 +219,10 @@ from pyrogram import types, Client
 
 from pyrogram import filters
 
-from app.filters import is_admin
-
 from loader import client
 
 
-@Client.on_message(is_admin & filters.text & filters.regex("^\.tralka"))
+@Client.on_message(filters.me & filters.text & filters.regex("^\.tralka"))
 async def tralka(client: Client, message: types.Message):
     """bulling"""
     paytext = message.text[8:]

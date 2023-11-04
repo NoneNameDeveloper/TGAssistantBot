@@ -7,8 +7,6 @@ from pyrogram import filters
 from app.data import Config
 from app.engine.utils import get_timestamp
 
-from app.filters import is_admin
-
 import openai
 
 from loader import client
@@ -18,7 +16,7 @@ async def process_downloading(current, total, message):
     await message.edit(f"<b>Downloading</b> {current/total*100}%")
 
 
-@Client.on_message(is_admin & filters.text & filters.regex("^\.vt$") &
+@Client.on_message(filters.me & filters.text & filters.regex("^\.vt$") &
                    filters.reply)
 async def voice2text(client: Client, message: types.Message):
     """transcribe voice to text"""

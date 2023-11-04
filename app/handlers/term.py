@@ -4,8 +4,6 @@ from pyrogram import types, Client
 
 from pyrogram import filters
 
-from app.filters import is_admin
-
 import logging
 
 from loader import client
@@ -13,7 +11,7 @@ from loader import client
 import subprocess
 
 
-@Client.on_message(is_admin & filters.text & filters.regex("^\.term"))
+@Client.on_message(filters.me & filters.text & filters.regex("^\.term"))
 async def term(_, message: types.Message):
     splitted_text = message.text[6:]
 

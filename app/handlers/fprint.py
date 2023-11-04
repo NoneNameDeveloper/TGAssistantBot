@@ -2,11 +2,10 @@ from pyrogram import types, Client
 
 from pyrogram import filters
 
-from app.filters import is_admin
 from loader import client
 
 
-@Client.on_message(is_admin & filters.text & filters.regex("^\.fprint"))
+@Client.on_message(filters.me & filters.text & filters.regex("^\.fprint"))
 async def fprint(client: Client, message: types.Message):
     """print sentence letter by letter"""
 
