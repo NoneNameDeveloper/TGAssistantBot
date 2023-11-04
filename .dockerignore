@@ -1,0 +1,35 @@
+# git
+.git
+.gitattributes
+.gitignore
+
+.idea
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*/__pycache__/
+*/*/__pycache__/
+*/*/*/__pycache__/
+*.py[cod]
+*/*.py[cod]
+*/*/*.py[cod]
+*/*/*/*.py[cod]
+
+*.log
+
+# Virtual environment
+.venv/
+venv/
+
+
+app/data/photo/*
+app/data/scripts/*
+app/data/storage/*
+app/data/voices/*
+app/data/handlers/custom_handlers/*
+
+app/data/photo/
+app/data/scripts/
+app/data/storage/
+app/data/voices/
+app/data/handlers/custom_handlers

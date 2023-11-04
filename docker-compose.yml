@@ -1,0 +1,15 @@
+services:
+  app:
+    build: .
+    depends_on:
+      - redis
+
+  redis:
+    image: "redis"
+    restart: always
+    volumes:
+      - redis_data:/data
+
+volumes:
+  redis_data:
+    driver: local
