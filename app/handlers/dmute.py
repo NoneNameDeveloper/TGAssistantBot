@@ -12,7 +12,7 @@ from app.filters import is_dmuted
 from loader import client
 
 
-@Client.on_message(filters.group & filters.me & filters.text & filters.regex("^\.dmute$/"))
+@Client.on_message(filters.group & filters.me & filters.text & filters.regex("^\.dmute$"))
 async def dmute(client: Client, message: types.Message):
     """delete all messages from user"""
     usr: ChatMember = await client.get_chat_member(message.chat.id, message.from_user.id)

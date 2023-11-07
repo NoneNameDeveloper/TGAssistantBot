@@ -16,6 +16,7 @@ Fill .env file with your data.
 1. Follow https://my.telegram.org to get `API_ID` and `API_HASH`
 2. Fill `REDIS_HOST` and `REDIS_PORT` to access Redis storage
 3. Fill `OPENAI_KEY` to access voice to text function
+4. Create file /app/data/cookies with cookies in the *netscape* format from music.yandex.ru to download full versions of tracks, using `.ym <track_link>`
 
 ```bash
 python3 main.py

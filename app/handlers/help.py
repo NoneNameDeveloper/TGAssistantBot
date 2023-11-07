@@ -1,6 +1,3 @@
-import datetime
-import os.path
-
 from pyrogram import types, Client
 
 from pyrogram import filters
