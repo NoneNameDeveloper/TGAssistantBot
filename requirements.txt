@@ -3,7 +3,7 @@ tgcrypto
 python-dotenv~=1.0.0
 redis~=5.0.1
 wikipedia~=1.4.0
-openai~=0.28.1
+openai~=1.1.1
 pytesseract~=0.3.10
 Pillow~=10.1.0
 youtube-dl~=2021.12.17
