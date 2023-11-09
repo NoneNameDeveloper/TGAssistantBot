@@ -35,7 +35,7 @@ async def voice2text(client: Client, message: types.Message):
 
     try:
         with open(file_path, "rb") as audio_file:
-            transcript = openai.OpenAI(api_key=Config.OPENAI_KEY).audio.translations.create(
+            transcript = openai.OpenAI(api_key=Config.OPENAI_KEY).audio.transcriptions.create(
                 file=audio_file, model="whisper-1"
             ).text
     except Exception as e:
