@@ -1,26 +1,24 @@
 import html
 import io
 import logging
-import os
 
-from openai import OpenAI
+from openai import AsyncOpenAI
 from pyrogram import types, Client
 
 from pyrogram import filters
 
 from app.data import Config
-from app.engine.utils import get_timestamp
 
 
 from loader import client
 
 
-def tts(text, model, voice) -> io.BytesIO | None:
+async def tts(text, model, voice) -> io.BytesIO | None:
 
     try:
-        client = OpenAI(api_key=Config.OPENAI_KEY)
+        client = AsyncOpenAI(api_key=Config.OPENAI_KEY)
 
-        response = client.audio.speech.create(
+        response = await client.audio.speech.create(
             model=model,  # "tts-1","tts-1-hd"
             voice=voice,  # 'alloy', 'echo', 'fable', 'onyx', 'nova', 'shimmer'
             input=text,
@@ -52,7 +50,7 @@ async def voice2text(client: Client, message: types.Message):
 
     await message.edit("Processing...Wait for a 3-5 sec...")
 
-    res = tts(text_to_translate, "tts-1", "shimmer")
+    res = await tts(text_to_translate, "tts-1", "shimmer")
 
     if not res:
         return await message.edit("Sorry, I couldn't process it :(")
