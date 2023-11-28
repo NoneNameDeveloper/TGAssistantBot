@@ -13,6 +13,7 @@ import string
 import subprocess
 
 from app.data import Config
+from loader import client
 
 
 def ceval(code: str) -> (str, str):
@@ -51,3 +52,7 @@ async def evals(client: Client, message: types.Message):
     else:
         await message.edit(f"<b>Code:</b>\n<code>{html.escape(text.lstrip())}</code>\n\n<b>Error:</b> \n" + f"<code>{html.escape(res[1])}</code>")
 
+client.desc["Evaluate Python"] = {
+    "use": ".eval <code>",
+    "description": "Evaluating given python code and giving output."
+}
